@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>演習3-3数当てゲーム：</title>
+</head>
+<body>
+  <h1>Guess the number of games</h1>
+  <input type="number" id="number"><br>
+  <button onclick="compare(NUMBER,guess)">compare</button><br>
+  <span id="output"></span><br>
+  <script>
+    function inputnumber(){
+      let number=parseInt(document.querySelector("#number").value);
+      return number;
+    }
+    function compare(NUMBER,guess){
+      let answer=document.querySelector("#output");
+      guess=inputnumber();
+      if(NUMBER>guess)
+      {
+        answer.textContent="それより大きい数です";
+        addtimes(times);
+        compare(times,NUMBER,guess);
+      }
+      else{
+        if(NUMBER<guess)
+        {
+          answer.textContent="それより小さい数です";
+          addtimes(times);
+          compare(times,NUMBER,guess);
+        }
+        else{
+          answer.textContent="正解です";
+        }
+      }
+    }
+    
+    const NUMBER=parseInt(Math.random()*100+1);
+    let guess=0;
+  </script>
+
+</body>
+</html>

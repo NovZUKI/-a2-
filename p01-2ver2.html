@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>演習1-2 四則演算その2 学籍番号：M21W7103</title>
+  </head>
+  <body>
+    四則演算<br>
+    number1:<input type="number" id="input01"><br>
+    number2:<input type="number" id="input02"><br>
+    <button onclick="add()">+</button>
+    <button onclick="minus()">-</button>
+    <button onclick="multiply()">×</button>
+    <button onclick="division()">÷</button><br>
+    <span id="Answer"></span>
+    <script>
+      function add(){
+            let inputobj01=document.querySelector("#input01");
+            let inputobj02=document.querySelector("#input02");
+            let obj=document.querySelector("#Answer");
+            let valueAdd=parseInt(inputobj01.value)+parseInt(inputobj02.value);
+            obj.textContent=valueAdd;
+        }
+        function minus(){
+            let inputobj01=document.querySelector("#input01");
+            let inputobj02=document.querySelector("#input02");
+            let obj=document.querySelector("#Answer");
+            let valueMinus=parseInt(inputobj01.value)-parseInt(inputobj02.value);
+            obj.textContent=valueMinus;
+        }
+        function multiply(){
+            let inputobj01=document.querySelector("#input01");
+            let inputobj02=document.querySelector("#input02");
+            let obj=document.querySelector("#Answer");
+            let valueMutiply=parseInt(inputobj01.value)*parseInt(inputobj02.value);
+            obj.textContent=valueMutiply;
+        }
+        function division(){
+            let inputobj01=document.querySelector("#input01");
+            let inputobj02=document.querySelector("#input02");
+            let obj=document.querySelector("#Answer");
+            let valueDivision=parseInt(inputobj01.value)/parseInt(inputobj02.value);
+            obj.textContent=valueDivision;
+        }
+    </script>         
+  </body>
+</html>
