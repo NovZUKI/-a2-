@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>変数のスコープ</title>
+  </head>
+  
+  <body>
+    <script>
+      function add(x, y) {
+        return Number(x) + Number(y);
+      }
+      let in1=window.prompt("num1");
+      let in2=window.prompt("num2");
+      let z=add(in1,in2);
+      console.log(in1+"+"+in2+"="+z);
+    </script>
+  </body>
+</html>

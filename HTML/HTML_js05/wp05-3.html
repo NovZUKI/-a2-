@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ウェブページへの出力</title>
+</head>
+<body>
+	<button onclick="show('toka-nn')">12</button>
+	<script>
+		function show(msg){
+			let btnobj=document.querySelector("button");
+			window.alert(btnobj.textContent);
+			btnobj.textContent=msg;
+			btnobj.style.backgroundColor="pink";
+			btnobj.style.fontSize="48px";
+		}
+	</script>
+</body>
+</html>

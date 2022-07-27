@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>演習12-2 学籍番号：M21W7103</title>
+	<style>
+		canvas {border : 1px solid gray;}
+	</style>
+</head>
+<body>
+	<h3>canvas内に青色の円をランダムに描く</h3>
+	<canvas width="640" height="480"></canvas>
+	<br><button id="btn">円を描く</button>
+
+	<script>
+		let c={x:0,y:0,r:50};
+		let id=null;
+		//canvasを得る
+		const cv=document.querySelector("canvas");
+		//描画コンテクスト取得
+		const gc=cv.getContext("2d");
+		const btn=document.querySelector("#btn");
+		//イベントリスナーを定義
+		btn.addEventListener("click",()=>{
+			draw();
+		})
+		function draw(){
+			c.x=parseInt(Math.random()*640);
+			c.y=parseInt(Math.random()*480);
+			gc.beginPath();
+			gc.lineWidth=10;
+			gc.strokeStyle="blue";
+			gc.arc(c.x,c.y,c.r,0,2*Math.PI);
+			gc.stroke();
+		}
+	</script>
+</body>
+</html>

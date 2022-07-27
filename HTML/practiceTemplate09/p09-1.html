@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>演習9-1 学籍番号：M21W7103</title>
+</head>
+<body>
+	<h2>円の面積（＋円周） その１</h2>
+	半径:<input type="text" id="inp">
+	<button id="btn1">円周計算</button>
+	<button id="btn2">面積計算</button>
+	<span id="result"></span>
+	<script>
+		let btnobj1=document.querySelector("#btn1");
+		let btnobj2=document.querySelector("#btn2");
+		let result=document.querySelector("#result");
+		btnobj1.addEventListener("click",function(){
+			let input=document.querySelector("#inp");
+			result.textContent="円周:"+Number(input.value)*2*Math.PI;
+		})
+		btnobj2.addEventListener("click",function(){
+			let input=document.querySelector("#inp");
+			result.textContent="面積:"+Number(input.value)*Number(input.value)*Math.PI;
+		})
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>演習10-3 学籍番号：M21W7103</title>
+	<style>
+		table {
+			border : 1px solid gray;
+			border-collapse: collapse;
+		}
+		td,th {
+						border: 1px solid gray;
+						min-width: 10em;
+					}
+		th {
+			background-color : lightgray;
+		}
+		span {
+			display : inline-block;
+			min-width   : 10em;
+		}
+	</style>
+</head>
+<body>
+	<h2>入力部品(3)</h2>
+	<table>
+		<tr>
+			<th>テキストボックス</th>
+			<td><input type="text" id="input1"></td>
+			<td><span id="tbox_result"></span></td>
+		</tr>
+		<tr>
+		<th>スライダー</th>
+			<td>
+				<input type="range" id="input2">
+			</td>
+			<td><span id="range_result"></span></td>
+		</tr>
+		<th>テキストエリア</th>
+			<td><textarea id="input3"></textarea></td>
+			<td><span id="tarea_result"></span></td>
+		</tr>
+		<tr>
+			<th>ラジオボタン</th>
+			<td>
+				<div id="input4">
+					<input type="radio" name="number" value="one">one
+					<input type="radio" name="number" value="two">two
+					<input type="radio" name="number" value="three">three
+				</div>
+			</td>
+			<td><span id="rbtn_result"></span></td>
+			</tr>
+		<tr>
+	  	<th>チェックボックス</th>
+			<td>
+				<div id="input5">
+					<input type="checkbox" name="gameengine" value="Unity">Unity
+					<input type="checkbox" name="gameengine" value="UE4">UE4
+					<input type="checkbox" name="gameengine" value="Cocos">Cocos
+				</div>
+			</td>
+			<td><span id="cbox_result"></span></td>
+		</tr>
+
+		<tr>
+			<th>メニュー（単一）</th>
+			<td>
+				<select id="input6" name="game">
+					<option value="dota">dota</option>
+					<option value="LOL">LOL</option>
+					<option value="csgo">csgo</option>
+				</select>
+			</td>
+			<td><span id="select1_result"></span></td>
+		</tr>
+		<tr>
+			<th>メニュー（複数）</th>
+			<td>
+				<select id="input7" name="gamescomp2" multiple size="3">
+					<option value="miHoYo">miHoYo</option>
+					<option value="Lilith">Lilith</option>
+					<option value="Tencent Games">Tencent Games</option>
+				</select>
+			</td>	
+			<td><span id="selectm_result"></span></td>
+		</tr>
+	</table>
+	<script>
+	input1.addEventListener("input", function () {
+		inp(input1,tbox_result);
+	})
+	input2.addEventListener("input", function () {
+		inp(input2,range_result);
+	})
+	input3.addEventListener("input", function () {
+		inp(input3,tarea_result);
+	})
+	input6.addEventListener("input", function () {
+		inp(input6,select1_result);
+	})
+	function inp(input,result){
+			result.textContent=input.value;
+	}
+	
+
+	input4.addEventListener("change", function () {
+		qsa("#input4 input",rbtn_result);
+	})
+	input5.addEventListener("change", function () {
+		qsa("#input5 input",cbox_result);
+	})
+	function qsa(input,result){
+		let res=[];
+		let ops=document.querySelectorAll(input) ;
+		for(let j=0;j<ops.length;j++){
+				if(ops[j].checked){
+					res.push(ops[j].value);
+				}
+			}
+			result.textContent=res;
+	}
+
+
+	input7.addEventListener("change", function () {
+		qso(input7,selectm_result);
+	})
+	function qso(input,result){
+		let res=[];
+			let ops=input.options;
+			for(k=0;k<ops.length;k++){
+				if(ops[k].selected){
+					res.push(ops[k].value);
+				}
+			}
+			result.textContent=res;
+	}
+
+	</script>
+</body>
+</html>

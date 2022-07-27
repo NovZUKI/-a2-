@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>演習5-3オブジェクト　学籍番号:M21W7103</title>
+</head>
+<body>
+    <h1>RGBで色を作る</h1>
+    R:<input type="range" id="Red" max="255"><br>
+    G:<input type="range" id="Green" max="255"><br>
+    B:<input type="range" id="Blue" max="255"><br>
+    <button onclick="RGBset()">現在の色は</button><br>
+    <span id="RGB"></span>
+    <script>
+        function RGBset(){
+            let robj=document.querySelector("#Red");
+            let gobj=document.querySelector("#Green");
+            let bobj=document.querySelector("#Blue");
+            let rgbobj=document.querySelector("#RGB");
+            let r=parseFloat(robj.value);
+            let g=parseFloat(gobj.value);
+            let b=parseFloat(bobj.value);
+            rgbobj.textContent="rgb:"+r+" "+g+" "+b;
+            rgbobj.style.backgroundColor="rgb("+r+","+g+","+b+")";
+			rgbobj.style.fontSize="48px";
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>演習2-1 成績判定 学籍番号：M21W7103</title>
+	</head>
+	<body>
+		成績を入力してください<br>
+		成績:<input type="number" id="score"><br>
+		<button onclick="s()">成績判定</button><span id="level"></span>
+		<script>
+			function s(){
+				let score=document.querySelector("#score");
+
+				let level=document.querySelector("#level");
+
+				if(score.value<60){
+				level.textContent="D判定です";
+			}
+			else{
+				if(score.value<70){
+					level.textContent="C判定です";
+			}
+			else{
+				if(score.value<80){
+					level.textContent="B判定です";
+			}
+			else{
+				if(score.value>80&&score.value<=100){
+					level.textContent="A判定です";
+			}
+			else{
+				level.textContent="正しい数値をいれてください";
+			}
+			}
+			}
+			}
+			}
+			
+
+		</script>
+
+	</body>
+</html>

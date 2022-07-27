@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>演習5-2オブジェクト　学籍番号:M21W7103</title>
+</head>
+<body>
+    <h1>BMI（肥満度）を計算</h1>
+    身長:<input type="text" id="cm">cm<br>
+    体重:<input type="text" id="kg">kg<br>
+    <button onclick="BMI()">計算</button><br>
+    <span id="BMI"></span><span id="BMIT"></span>
+    <script>
+        function BMI(){
+            let cmobj=document.querySelector("#cm");
+            let kgobj=document.querySelector("#kg");
+            let bmiobj=document.querySelector("#BMI");
+            let bmitobj=document.querySelector("#BMIT");
+            let valueBMI=parseFloat(parseInt(kgobj.value)/(parseInt(cmobj.value)*parseInt(cmobj.value)*0.0001));
+            bmiobj.textContent+=valueBMI;
+            if(valueBMI<18.5)
+                bmitobj.textContent="痩身";
+            else
+                if(valueBMI>25)
+                    bmitobj.textContent="肥満";
+                else
+                    bmitobj.textContent="普通体重";
+        }
+    </script>
+    
+</body>
+</html>

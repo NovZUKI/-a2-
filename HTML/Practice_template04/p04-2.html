@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>演習4-2オブジェクト　学籍番号:M21W7103</title>
+</head>
+<body>
+    <script>
+        function createStudent(Id,Name ,Pw){
+            let student={
+                id:Id,
+                name:Name,
+                pw:Pw,
+            };
+            return student;
+        }
+        
+        let studentnew=createStudent();
+        studentnew.id=window.prompt("id:");
+        studentnew.name=window.prompt("name:");
+        studentnew.pw=window.prompt("pw:");
+
+        console.log(studentnew.id);
+        console.log(studentnew["name"]);
+        console.log(studentnew.pw);
+    </script>
+</body>
+</html>

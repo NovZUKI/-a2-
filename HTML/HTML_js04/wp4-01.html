@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>第4回:オブジェクト</title>
+</head>
+<body>
+  <script>
+    let student={
+      id:"M21W7103",
+      name:"QIANJIAXIN",
+      year:2021,
+      hobby:"野球",
+      greet:function(){
+        window.alert("こんにちは"+this.name);
+      }
+    }
+    let id1=student.id;
+    console.log(id1);
+    let id2=student['id2'];
+    console.log(id2);
+    student.hobby="Baseball";
+    student.age=66;
+    delete student.year;
+  </script>
+</body>
+</html>

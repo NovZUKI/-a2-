@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>input要素の入力値取得</title>
+</head>
+<body>
+	<h3>テキストボックス</h3>
+	<input type="text" id="input01">
+	<button onclick="showvalue()">入力</button>
+	<input type="range" min="-100" id="slider01">
+	<script>
+		function showvalue(){
+			let	inputobj=document.querySelector("#input01");
+			let value01=inputobj.value;
+			window.alert(value01);
+			let sliderobj=document.querySelector("#slider01");
+			let value02=sliderobj.value;
+			window.alert(value02);
+		}
+
+	</script>
+
+</body>
+</html>

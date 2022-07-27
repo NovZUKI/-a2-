@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>課題3-1 じゃんけんゲーム関数版：</title>
+</head>
+<body>
+  <script>
+    function computerhand(){
+      let ran=parseInt(Math.random()*3+1);
+      return ran;
+    }  
+    function playerhand(){
+      let hand=Number(window.prompt("文字列"));
+      if(hand==1||hand==2||hand==3)
+        return hand;
+      else
+        return "please input 1 , 2 or 3.";
+    }
+    function judge(ran,hand){
+      if(hand==1)
+        switch(ran)
+        {
+          case 1:return "draw";break;
+          case 2:return "win";break;
+          case 3:return "lose";break;
+        }
+      else if(hand==2)
+        switch(ran)
+        {
+         case 1:return "lose";break;
+          case 2:return "draw";break;
+         case 3:return "win";break;
+        }
+        else if(hand==3)
+          switch(ran)
+          {
+            case 1:return "win";break;
+            case 2:return "draw";break;
+           case 3:return "lose";break;
+         }
+         else{
+           return "エラー";
+         }
+    }
+    let player=0;
+    const COMPUTER=computerhand();
+    player=playerhand();
+    let end=judge(COMPUTER,player);
+    window.alert("compuer:"+COMPUTER+" player:"+player+" 結果:"+end);
+  </script>
+
+</body>
+</html>

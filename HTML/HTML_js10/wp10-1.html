@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>入出力その２</title>
+</head>
+<body>
+	<h3>ラジオボタン</h3>
+	<div id="radio">
+		<input type="radio" name="place" value="KYOTO">京都
+		<input type="radio" name="place" value="TOKYO">東京
+		<input type="radio" name="place" value="OSAKA">大阪
+		<button id="btn1">都道府県</button>
+	</div>
+	<h3>チェックボックス</h3>
+	<div id="checkbox">
+		<input type="checkbox" name="DB" value="MYSQL">MySQL
+		<input type="checkbox" name="DB" value="ORACLE">Oracle
+		<input type="checkbox" name="DB" value="SQLSERVER">SQL Server
+		<button id="btn2">使用したデータベース</button>
+	</div>
+	<h3>セレクトボックス（単一）</h3>
+	<select id="sel1" name="address1">
+		<option value="KYOTO">京都</option>
+		<option value="TOKYO">東京</option>
+		<option value="OSAKA">大阪</option>
+	</select>
+	<button id="btn3">住所</button>
+
+	<h3>セレクトボックス（複数）</h3>
+	<select id="sel2" name="address2" multiple size="3">
+		<option value="KYOTO">京都</option>
+		<option value="TOKYO">東京</option>
+		<option value="OSAKA">大阪</option>
+	</select>
+	<button id="btn4">場所</button>
+
+	<h3>イベント　change</h3>
+	<select id="sel3" name="station">
+		<option value="TOKYO">東京</option>
+		<option value="NAGOYA">名古屋</option>
+		<option value="OSAKA">大阪</option>
+		<option value="FUKUOKA">福岡</option>
+	</select>
+	<span id="sel3_result">場所</span>
+
+	<div id="area">asdfasdfadsfadsfadfadfadsf</div>
+
+	<script>
+		let area=document.querySelector("#area");
+		area.addEventListener("mouseover",()=>{
+			area.style.backgroundColor="pink";
+		})
+		area.addEventListener("mouseout",()=>{
+			area.style.backgroundColor="red";
+		})
+		//ラジオボタン
+		let btn1 = document.querySelector("#btn1");
+		btn1.addEventListener("click",()=>{
+			let result="";
+			let ops =document.querySelectorAll("#radio input");
+ 			for (let i=0; i<ops.length;i++){
+ 				if (ops[i].checked){
+ 				result = ops[i].value;
+ 				}
+			}
+ 			console.log("ラジオボタン"+result);
+		})
+		//チェックボックス
+		let btn2 = document.querySelector("#btn2");
+		btn2.addEventListener("click",()=>{
+			let result=[];
+			let ops=document.querySelectorAll("#checkbox input") ;
+			for(let j=0;j<ops.length;j++){
+				if(ops[j].checked){
+					result.push(ops[j].value);
+				}
+			}
+			console.log("チェックボックス"+result);
+		})
+		
+		//セレクトボックス単一
+		let btn3 = document.querySelector("#btn3");
+		btn3.addEventListener("click",()=>{
+			let result=document.querySelector("#sel1").value;
+			console.log("セレクトボックス"+result);
+
+		})
+
+		//セレクトボックス複数
+		let btn4 = document.querySelector("#btn4");
+		btn4.addEventListener("click",()=>{
+			let result=[];
+			let ops=document.querySelector("#sel2").options;
+			for(k=0;k<ops.length;k++){
+				if(ops[k].selected){
+					result.push(ops[k].value);
+				}
+			}
+			console.log("セレクトボックス"+result);
+
+		})
+
+
+		//select change
+		let sel3=document.querySelector("#sel3");
+		sel3.addEventListener("change",()=>{
+			let v=sel3.value;
+			document.querySelector("#sel3_result").textContent=v;
+		})
+		
+
+	</script>
+</body>
+</html>

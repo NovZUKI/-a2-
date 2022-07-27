@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>配列の利用1</title>
+  </head>
+  <body>
+    <h3>メニュー</h3>
+    注文するメニュー番号は？<input type="number" id="menu">
+    <button onclick="order()">注文</button>
+    <div id="name"></div>
+    <script>
+      let menu=["青椒肉絲","回鍋肉","油淋鶏","八宝菜"];
+      let len=menu.length
+      window.alert(len);
+      menu.push("jiaozi")
+      window.alert(len);
+      let serve=menu.shift();
+      window.alert(serve);
+      window.alert(len);
+      function order() {
+        let orderNumber = document.querySelector("#menu").value; 
+        document.querySelector("#name").textContent=menu[orderNumber]
+        let menuName="";
+        if (orderNumber==0){
+           menuName="青椒肉絲";
+         } else if (orderNumber==1){
+           menuName="回鍋肉";
+         } else {
+           menuName="油淋鶏";
+         };
+         document.querySelector("#name").textContent=menuName;
+ 
+     }
+   </script
+
+  </body>
+</html>

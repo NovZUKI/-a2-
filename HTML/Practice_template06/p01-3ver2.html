@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <meta charset="utf-8">
+     <title>演習1-3 硬貨の枚数計算 学籍番号：M21W7103</title>
+  </head>
+  <body>
+    硬貨の枚数計算<br>
+    支払い金額　円が入力されると<br>
+    金額: <input type="number" id="money"><br>
+    <button onclick="c()">計算</button>
+    <br>
+    結果は，<br>
+    500円：<span id="m500"></span>枚<br>
+    100円：<span id="m100"></span>枚<br>
+    50円：<span id="m50"></span>枚<br>
+    10円：<span id="m10"></span>枚<br>
+    5円：<span id="m5"></span>枚<br>
+    1円：<span id="m1"></span>枚<br>
+
+    <script>
+      function c(){
+        let m=document.querySelector("#money");
+
+        let obj500=document.querySelector("#m500");
+        let obj100=document.querySelector("#m100");
+        let obj50=document.querySelector("#m50");
+        let obj10=document.querySelector("#m10");
+        let obj5=document.querySelector("#m5");
+        let obj1=document.querySelector("#m1");
+
+        let a=parseInt(parseInt(m.value)/500);
+        let b=parseInt((parseInt(m.value)-500*a)/100);
+        let c=parseInt((parseInt(m.value)-500*a-100*b)/50);
+        let d=parseInt((parseInt(m.value)-500*a-100*b-50*c)/10);
+        let e=parseInt((parseInt(m.value)-500*a-100*b-50*c-10*d)/5);
+        let f=parseInt(parseInt(m.value)-500*a-100*b-50*c-10*d-5*e);
+
+        obj500.textContent=a;
+        obj100.textContent=b;
+        obj50.textContent=c;
+        obj10.textContent=d;
+        obj5.textContent=e;
+        obj1.textContent=f;
+      }
+    </script>
+  </body>
+</html>

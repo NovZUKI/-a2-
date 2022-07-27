@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <meta charset="utf-8">
+     <title>演習1-3 硬貨の枚数計算 学籍番号：M21W7103</title>
+  </head>
+  <body>
+    <script>
+    let money=window.prompt("支払い金額　円が入力されると");
+    let m=Number(money);
+    let a=parseInt(m/500);
+    let b=parseInt((m-500*a)/100);
+    let c=parseInt((m-500*a-100*b)/50);
+    let d=parseInt((m-500*a-100*b-50*c)/10);
+    let e=parseInt((m-500*a-100*b-50*c-10*d)/5);
+    let f=parseInt(m-500*a-100*b-50*c-10*d-5*e);
+    window.alert("500円："+a+"枚, 100円："+b+"枚, 50円："+c+"枚, 10円："+d+"枚, 5円："+e+"枚, 1円："+f);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>演習8-4 乱数の発生回数 学籍番号：M21W7103</title>
+</head>
+<body>
+	<h2>乱数の発生回数</h2>
+	発生回数:<input type="number" id="times"><br>
+	<button onclick="rantime()">入力</button><br>
+	0:	<span id="output0"></span><br>
+	1:	<span id="output1"></span><br>
+	2:	<span id="output2"></span><br>
+	3:	<span id="output3"></span><br>
+	4:	<span id="output4"></span><br>
+	5:	<span id="output5"></span><br>
+	6:	<span id="output6"></span><br>
+	7:	<span id="output7"></span><br>
+	8:	<span id="output8"></span><br>
+	9:	<span id="output9"></span><br>
+	<script>
+		function rantime(){
+			let time=parseInt(document.querySelector("#times").value);
+			let output0=document.querySelector("#output0");
+			let output1=document.querySelector("#output1");
+			let output2=document.querySelector("#output2");
+			let output3=document.querySelector("#output3");
+			let output4=document.querySelector("#output4");
+			let output5=document.querySelector("#output5");
+			let output6=document.querySelector("#output6");
+			let output7=document.querySelector("#output7");
+			let output8=document.querySelector("#output8");
+			let output9=document.querySelector("#output9");
+			let rd=[0,0,0,0,0,0,0,0,0,0]
+			for(let i=0;i<time;i++){
+				let number=parseInt(Math.random()*10);
+				switch(number){
+					case 1:rd[1]=rd[1]+1;break;
+					case 2:rd[2]=rd[2]+1;break;
+					case 3:rd[3]=rd[3]+1;break;
+					case 4:rd[4]=rd[4]+1;break;
+					case 5:rd[5]=rd[5]+1;break;
+					case 6:rd[6]=rd[6]+1;break;
+					case 7:rd[7]=rd[7]+1;break;
+					case 8:rd[8]=rd[8]+1;break;
+					case 9:rd[9]=rd[9]+1;break;
+					case 0:rd[0]=rd[0]+1;break;
+				}
+			}
+			output0.textContent=rd[0];
+			output1.textContent=rd[1];
+			output2.textContent=rd[2];
+			output3.textContent=rd[3];
+			output4.textContent=rd[4];
+			output5.textContent=rd[5];
+			output6.textContent=rd[6];
+			output7.textContent=rd[7];
+			output8.textContent=rd[8];
+			output9.textContent=rd[9];
+		}
+	</script>
+</body>
+</html>

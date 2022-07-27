@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>演習5-1オブジェクト　学籍番号:M21W7103</title>
+</head>
+<body>
+    <input type="text" id="input01">
+    +
+    <input type="text" id="input02">
+    <button onclick="Add()">=</button>
+    <span id="Answer01"></span><br>
+    <input type="text" id="input03">
+    ×
+    <input type="text" id="input04">
+    <button onclick="Multiply()">=</button>
+    <span id="Answer02"></span>
+    <script>
+        function Add(){
+            let inputobj01=document.querySelector("#input01");
+            let inputobj02=document.querySelector("#input02");
+            let obj=document.querySelector("#Answer01");
+            let valueAdd=parseInt(inputobj01.value)+parseInt(inputobj02.value);
+            obj.textContent=valueAdd;
+        }
+        function Multiply(){
+            let inputobj03=document.querySelector("#input03");
+            let inputobj04=document.querySelector("#input04");
+            let objM=document.querySelector("#Answer02");
+            let valueM=parseInt(inputobj03.value)*parseInt(inputobj04.value);
+            objM.textContent=valueM;
+        }
+    </script>
+</body>
+</html>

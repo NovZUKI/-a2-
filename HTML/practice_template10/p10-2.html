@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>演習10-2 学籍番号：M21W7103</title>
+	<style>
+		table {
+			border : 1px solid gray;
+			border-collapse: collapse;
+		}
+		td,th {
+						border: 1px solid gray;
+						min-width: 10em;
+					}
+		th {
+			background-color : lightgray;
+		}
+		span {
+			display : inline-block;
+			min-width   : 10em;
+		}
+	</style>
+</head>
+<body>
+	<h2>入力部品(2)</h2>
+	<table>
+		<tr>
+			<th>テキストボックス</th>
+			<td><input id="input1" type="text"></td>
+			<td><span id="tbox_result"></span></td>
+		</tr>
+		<tr>
+		<th>スライダー</th>
+			<td>
+				<input type="range" id="input2">
+			</td>
+			<td><span id="range_result"></span></td>
+		</tr>
+		<th>テキストエリア</th>
+			<td><textarea id="input3"></textarea></td>
+			<td><span id="tarea_result"></span></td>
+		</tr>
+		<tr>
+			<th>ラジオボタン</th>
+			<td>
+				<div id="input4">
+					<input type="radio" name="number" value="one">one
+					<input type="radio" name="number" value="two">two
+					<input type="radio" name="number" value="three">three
+				</div>
+			</td>
+			<td><span id="rbtn_result"></span></td>
+			</tr>
+		<tr>
+	  	<th>チェックボックス</th>
+			<td>
+				<div id="input5">
+					<input type="checkbox" name="gameengine" value="Unity">Unity
+					<input type="checkbox" name="gameengine" value="UE4">UE4
+					<input type="checkbox" name="gameengine" value="Cocos">Cocos
+				</div>
+			</td>
+			<td><span id="cbox_result"></span></td>
+		</tr>
+
+		<tr>
+			<th>メニュー（単一）</th>
+			<td>
+				<select id="input6" name="game">
+					<option value="dota">dota</option>
+					<option value="LOL">LOL</option>
+					<option value="csgo">csgo</option>
+				</select>
+			</td>
+			<td><span id="select1_result"></span></td>
+		</tr>
+		<tr>
+			<th>メニュー（複数）</th>
+			<td>
+				<select id="input7" name="gamescomp2" multiple size="3">
+					<option value="miHoYo">miHoYo</option>
+					<option value="Lilith">Lilith</option>
+					<option value="Tencent Games">Tencent Games</option>
+				</select>
+			</td>	
+			<td><span id="selectm_result"></span></td>
+		</tr>
+	</table>
+	<script>
+	// ==== それぞれのボタンを押した時のイベントリスナーを設定し処理を定義する ====
+	//テキストボックス
+	let input1=document.querySelector("#input1");
+	input1.addEventListener("input",()=>{
+		let tbox_result=document.querySelector("#tbox_result");
+		tbox_result.textContent=input1.value;
+	})
+
+	//スライダー
+	let input2=document.querySelector("#input2");
+	input2.addEventListener("input",()=>{
+		let range_result=document.querySelector("#range_result");
+		range_result.textContent=input2.value;
+	})
+
+
+	//テキストエリア
+	let input3=document.querySelector("#input3");
+	input3.addEventListener("input",()=>{
+		let tarea_result=document.querySelector("#tarea_result");
+		tarea_result.textContent=input3.value;
+	})
+
+
+	//ラジオボタン
+	
+	input4.addEventListener("change",()=>{
+			let result="";
+			let input4 =document.querySelectorAll("#input4 input");
+ 			for (let i=0; i<input4.length;i++){
+ 				if (input4[i].checked){
+ 				result = input4[i].value;
+ 				}
+			}
+			let rbtn_result=document.querySelector("#rbtn_result");
+			rbtn_result.textContent=result;
+		})
+
+
+	//チェックボックス
+	input5.addEventListener("change",()=>{
+			let result=[];
+			let ops=document.querySelectorAll("#input5 input") ;
+			for(let j=0;j<ops.length;j++){
+				if(ops[j].checked){
+					result.push(ops[j].value);
+				}
+			}
+			let cbox_result=document.querySelector("#cbox_result");
+			cbox_result.textContent=result;
+		})
+
+
+	//メニュー（単一）
+	input6.addEventListener("change",()=>{
+			let result=document.querySelector("#input6").value;
+			let select1_result=document.querySelector("#select1_result");
+			select1_result.textContent=result;
+
+		})
+
+	//メニュー（複数）
+	input7.addEventListener("change",()=>{
+			let result=[];
+			let ops=document.querySelector("#input7").options;
+			for(k=0;k<ops.length;k++){
+				if(ops[k].selected){
+					result.push(ops[k].value);
+				}
+			}
+			let selectm_result=document.querySelector("#selectm_result");
+			selectm_result.textContent=result;
+
+		})
+
+
+
+	</script>
+</body>
+</html>

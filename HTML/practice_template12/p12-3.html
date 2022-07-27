@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>演習12-3 学籍番号：M21W7103</title>
+	<style>
+		canvas {border : 1px solid gray;}
+	</style>
+</head>
+<body>
+	<h3>ランダムな位置に出現する青色の円が右上に移動する</h3>
+	<canvas width="640" height="480"></canvas>
+	<br><button id="btn">円を描く</button>
+
+	<script>
+    let circles=[];
+    let id = null;
+    const cv = document.querySelector("canvas");
+    const gc = cv.getContext("2d");
+    const btn = document.querySelector("#btn");
+
+    btn.addEventListener('click',()=>{
+     create();
+     draw();
+     if (id) {
+         return;
+     }else{
+          id = setInterval(draw,10);
+     setInterval(() => {
+         gc.clearRect(0,0,cv.width,cv.height);
+         circles.length = 0;
+        },10000);
+     }
+     
+    })
+
+        function create() {
+            let c = {x:Math.random()*640, y:Math.random()*480, r:40};
+            circles.push(c);
+        }
+
+     function draw(){
+         gc.clearRect(0,0,cv.width,cv.height);
+         for(let i=0;i<circles.length;i++){
+             circles[i].x+=1;
+             circles[i].y-=1;
+             gc.beginPath();
+             gc.lineWidth=5;
+             gc.strokeStyle = "blue";
+             gc.arc(circles[i].x,circles[i].y,circles[i].r,0,2*Math.PI);
+             gc.stroke();
+    }
+}
+	</script>
+</body>
+</html>

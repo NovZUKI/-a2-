@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>演習7-2(レストランの注文) 学籍番号:</title>
+</head>
+<body>
+	<h2>レストランの注文</h2>
+menu:子羊の蒸し,熊の手の蒸し,鹿の尾の蒸し,花鴨の焼き,雛鶏の焼き<br>
+<button onclick="s_meal()">特別注文</button>
+<button onclick="meal()">注文</button>
+<button onclick="cancel()">提供</button>
+<hr>
+注文:<span id="list"></span>
+<script>
+	let menu=['子羊の蒸し','熊の手の蒸し','鹿の尾の蒸し','花鴨の焼き','雛鶏の焼き'];
+	let m_list=[];
+	let menu_list=document.querySelector("#list");
+function meal(){
+	let ran=parseInt(Math.random()*5);
+	m_list.push(menu[ran]);
+	menu_list.textContent=m_list.join(",");
+}
+function cancel(){
+	m_list.shift();
+	menu_list.textContent=m_list.join(",");
+}
+function s_meal(){
+	let ran=parseInt(Math.random()*5);
+	m_list.unshift(menu[ran]);
+	menu_list.textContent=m_list.join(",");
+}
+</script>
+</body>
+</html>

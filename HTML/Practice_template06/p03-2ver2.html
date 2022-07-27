@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>課題3-2関数の実行：</title>
+</head>
+<body>
+  <h1>関数の実行</h1>
+  <p>引数を渡す関数 </p>
+  <button onClick="hello_JA()">おはよう</button><br>
+  <button onClick="hello_CH()">你好</button><br>
+  <button onClick="hello_EN()">Hello</button><br>
+  ボタンを押すと結果を下に表示します<br>
+  <span id="output1"></span><br>
+  <span id="output2"></span><br>
+  <span id="output3"></span><br>
+  <span id="output4"></span><br>
+  <script>
+    function hello_JA(){
+      let output1=document.querySelector("#output1");
+      let output2=document.querySelector("#output2");
+      let output3=document.querySelector("#output3");
+      let output4=document.querySelector("#output4");
+      output1.textContent="************";
+      output2.textContent="**  挨拶  **";
+      output3.textContent="************";
+      output4.textContent="おはよう";
+    }
+    function hello_CH(){
+      let output1=document.querySelector("#output1");
+      let output2=document.querySelector("#output2");
+      let output3=document.querySelector("#output3");
+      let output4=document.querySelector("#output4");
+      output1.textContent="************";
+      output2.textContent="**  挨拶  **";
+      output3.textContent="************";
+      output4.textContent="你好";
+    }
+    function hello_EN(){
+      let output1=document.querySelector("#output1");
+      let output2=document.querySelector("#output2");
+      let output3=document.querySelector("#output3");
+      let output4=document.querySelector("#output4");
+      output1.textContent="************";
+      output2.textContent="**  挨拶  **";
+      output3.textContent="************";
+      output4.textContent="Hello";
+    }
+  </script>
+  <p>結果はコンソールで確認</p>
+</body>
+</html>

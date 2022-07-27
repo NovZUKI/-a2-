@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>演習8-3 学籍番号：M21W7103 </title>
+</head>
+<body>
+	<h3>整数ＭからＮ(Ｍ&lt;Ｎ)までの数を足す</h3>
+	M:<input type="number" id="m_num"><br>
+	N:<input type="number" id="n_num"><br>
+	<button onclick="sumnum()">入力</button><br>
+	<span id="output"></span>
+	<script>
+		function sumnum(){
+			let m=parseInt(document.querySelector("#m_num").value);
+			let n=parseInt(document.querySelector("#n_num").value);
+			let out=document.querySelector("#output");
+			let sum=0;
+			for(let i=0;i<=(n-m);i++){
+				sum=sum+m+i;
+			}
+			out.textContent=sum;
+			
+		}
+	</script>
+</body>
+</html>

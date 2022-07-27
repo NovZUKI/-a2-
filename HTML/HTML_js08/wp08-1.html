@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <titile>繰り返し</titile>
+  </head>
+  <body>
+    <h3>while</h3>
+    <div id="ex1"></div>
+
+    <h3>do while</h3>
+    <div id="ex2"></div>
+    
+    <h3>for文</h3>
+    <div id="ex3"></div>
+    
+    <h3>配列</h3>
+    <div id="ex4"></div>
+    
+    <h3>配列（for ofの使用）</h3>
+    <ol id="ex5"></ol>
+    
+    <h3>オブジェクト(for inの使用）</h3>
+    <div id="ex6"></div>
+    
+    <script>
+      let i=0;
+      while(i<5){
+        document.querySelector("#ex1").innerHTML+="+<br>";
+        i+=1;
+      }
+
+      let j=0;
+      do{
+        document.querySelector("#ex2").innerHTML+="+<br>";
+        i+=1;
+      }while(i<10);
+
+      for(let k=0;k<5;k++){
+        document.querySelector("#ex3").innerHTML+="+<br>";
+        i+=1;
+      }
+
+      let lists=[3,5,7,9,1];
+      for (let l=0;l<lists.length();l++){
+        document.querySelector("#ex4").innerHTML+="+<br>";
+      }
+    </script>
+  </body>
+</html>

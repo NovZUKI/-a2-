@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>演習7-1(おみくじ) 学籍番号:M21W7103</title>
+</head>
+<body>
+	<h3>おみくじ</h3>
+	<strong>運勢占い</strong><br>
+	<button onclick="divination()">占う</button>
+	<span id="output"></span><br>
+	<script>
+		function divination(){
+			let menulist=['大吉','中吉','吉','凶']
+			let augury=document.querySelector("#output");
+		  let number=parseInt(Math.random()*4);
+			augury.textContent="あなたの運勢は"+menulist[number]+"です";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSSアニメーション 学籍番号:XXXXXX</title>
+    <style>
+      .square1 {
+        width: 200px; height: 200px;
+        border:3px solid blue;
+        margin: 5px;
+        transition: background-color 3s ease 1s;
+      }
+      .square1:hover {
+        background-color: black;
+      }
+      .square2 {
+        width: 200px; height: 200px;
+        border:3px solid orange;
+        margin: 5px;
+        /*transition: background-color 3s linear 1s,width 3s;*/
+        transition:transform 3s ease;
+      }
+      .anima1{
+        /*width: 400px;
+        background-color: black;*/
+        transform: skew(10deg,10deg) rotate(360deg) scale(0.8,0.8);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSSアニメーション</h1>
+    <div class="square1">HTMLとCSSのみでTransition</div>
+    <div class="square2" id="div2">JavascriptでTransition</div>
+
+    <script>
+      const div2=document.querySelector("#div2");
+      div2.addEventListener("click",()=>{
+        //div2.style.backgroundColor="black";
+        div2.classList.add("anima1");
+      })
+
+    </script>
+  </body>
+</html>

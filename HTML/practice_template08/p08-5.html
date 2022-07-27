@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>演習8-5 買い物かご　学籍番号:M21W7103</title>
+</head>
+<style>
+table{
+    border:1px solid skyblue;
+    border-collapse:collapse;  
+    width: 30%;
+}
+th,td{
+    border:2px solid skyblue;
+}
+</style>
+<body>
+    <h2>買い物をします。</h2>
+    name:<input id="name" type="text"><br>
+    number:<input id="number" type="number"><br>
+    <button onclick="addCart()">add</button><br>
+    <div id="table"></div>
+    <script>
+        let cart = {};
+        function showCart(){
+            //買い物かごの中を出力する
+            let str="";
+            for(key in cart){
+                str+="<tr><td>"+key+"</td><td>"+cart[key]+"</td><tr>";
+               
+            }
+            var table=document.querySelector("#table");
+           table.innerHTML="<table><tr><th>物品名</th><th>数量</th></tr>"+str+"</table>";
+
+    }
+            
+        function addCart(){
+            //入力された品名と個数をオブジェクトに追加
+            var name=document.querySelector("#name").value;
+            var number=parseInt(document.querySelector("#number").value);
+            var bo=0;
+            if(cart!=null)
+                if(name in cart){
+                    cart[name]=cart[name]+number;
+                    bo=1;
+                }
+            if(bo==0){
+                cart[name]=number;
+            }
+            bo=0;
+            showCart();
+            
+        }
+    </script>
+</body>
+</html>
